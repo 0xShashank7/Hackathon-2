@@ -1,0 +1,169 @@
+.game {
+  display: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  color: white;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(
+    174deg,
+    #00ffbd,
+    #c500ff,
+    #ff0063,
+    #ff7e00,
+    #3e00ff,
+    #000000
+  );
+  background-size: 1200% 1200%;
+
+  -webkit-animation: AnimationName 40s ease infinite;
+  -moz-animation: AnimationName 40s ease infinite;
+  animation: AnimationName 40s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 10rem;
+}
+
+.game-title {
+  font-size: 1.5rem;
+}
+
+.header > p {
+  font-size: 1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.game-image {
+  /* height: 50%; */
+  width: 90%;
+  border: 5px solid whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.guess {
+  font-size: 2rem;
+}
+
+.user-input {
+  width: 80%;
+  height: 2rem;
+  font-weight: bolder;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 2px 5px;
+  outline: none;
+}
+
+.submit {
+  height: 2rem;
+  width: 8rem;
+  background-color: inherit;
+  color: white;
+  font-size: 1rem;
+  font-weight: bolder;
+  margin: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.submit:hover {
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 5px;
+  height: 3rem;
+  width: 10rem;
+}
+
+@media (min-width: 1025px) {
+  .header {
+    margin: 0%;
+    margin-bottom: 1rem;
+  }
+
+  main {
+    flex-direction: row;
+  }
+
+  .game-image {
+    width: 50%;
+  }
+
+  .game-title {
+    font-size: 3rem;
+  }
+
+  .header > p {
+    font-size: 1.5rem;
+  }
+}
