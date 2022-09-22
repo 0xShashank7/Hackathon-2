@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pictionary</title>
-    <link rel="stylesheet" href="./index.css">
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container" >
-        <div id="title" > 
-            <h1>Pictionary Game</h1>
-        </div>
-        <div class="form">
-            <h3>Enter your name </h3>
-            <input type="text" >
-        </div>
-        <button class="start-btn" onclick='' >Enter game</button>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./game.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="title">
+        <h1>Pictionary Game</h1>
+      </div>
+      <div class="form">
+        <h3>Enter your name</h3>
+        <input type="text" />
+      </div>
+      <button class="start-btn" onclick="">Enter game</button>
     </div>
 
-    <script src="./index.js" ></script>
-</body>
+    <div class="game">
+      <div class="header">
+        <h1 class="game-title">Game name</h1>
+        <p class="score">score: 0</p>
+        <p class="timer">time left: 0.00</p>
+      </div>
+      <main>
+        <img
+          src="https://c4.wallpaperflare.com/wallpaper/988/230/567/lockheed-martin-f-22-raptor-military-lockheed-martin-f-22-raptor-wallpaper-preview.jpg"
+          alt="game-image"
+          class="game-image"
+        />
+        <div class="input-field">
+          <p class="guess">Guess the image</p>
+
+          <input class="user-input" type="text" />
+          <button class="submit">submit</button>
+        </div>
+      </main>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
