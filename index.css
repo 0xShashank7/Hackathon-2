@@ -18,7 +18,8 @@ body{
     color: #ECECEF;
     height: 80vh;
     border-radius: 25px;
-    background: url('https://source.unsplash.com/random') no-repeat;
+    /* background: ; */
+    /* background: url('https://source.unsplash.com/random') no-repeat; */
     background-size: cover;
     background-position: center;
     width: 90vw;
@@ -28,7 +29,59 @@ body{
     align-items: center;
     flex-direction: column;
     
+
+    background: linear-gradient(
+    174deg,
+    #00ffbd,
+    #c500ff,
+    #ff0063,
+    #ff7e00,
+    #3e00ff,
+    #000000
+  );
+  background-size: 1200% 1200%;
+
+  -webkit-animation: AnimationName 40s ease infinite;
+  -moz-animation: AnimationName 40s ease infinite;
+  animation: AnimationName 40s ease infinite;
+  text-shadow: 2px 2px 20px black; 
+
 }
+
+@-webkit-keyframes AnimationName {
+    0% {
+      background-position: 51% 0%;
+    }
+    50% {
+      background-position: 50% 100%;
+    }
+    100% {
+      background-position: 51% 0%;
+    }
+  }
+  @-moz-keyframes AnimationName {
+    0% {
+      background-position: 51% 0%;
+    }
+    50% {
+      background-position: 50% 100%;
+    }
+    100% {
+      background-position: 51% 0%;
+    }
+  }
+  @keyframes AnimationName {
+    0% {
+      background-position: 51% 0%;
+    }
+    50% {
+      background-position: 50% 100%;
+    }
+    100% {
+      background-position: 51% 0%;
+    } 
+}
+
 #title h1{
     font-size: 50px;
     text-shadow: 5px 5px 5px #141618;

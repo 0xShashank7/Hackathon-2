@@ -14,20 +14,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  background: linear-gradient(
-    174deg,
-    #00ffbd,
-    #c500ff,
-    #ff0063,
-    #ff7e00,
-    #3e00ff,
-    #000000
-  );
-  background-size: 1200% 1200%;
-
-  -webkit-animation: AnimationName 40s ease infinite;
-  -moz-animation: AnimationName 40s ease infinite;
-  animation: AnimationName 40s ease infinite;
+  
 }
 
 @-webkit-keyframes AnimationName {
@@ -66,7 +53,8 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-around;
+  width: 90%;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 1rem;
   margin-bottom: 10rem;
@@ -81,9 +69,10 @@ body {
 }
 
 main {
+  width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 
