@@ -6,7 +6,7 @@
 
 let clickedCounter = 0;
 let countryName = "",
-  time = 20,
+  time = 30,
   timerUpdate,
   points = 0,
   streak = 0;
@@ -15,13 +15,14 @@ const startBtn = document.querySelector(".start-btn");
 const body = document.querySelector("body");
 const gameScreen = document.querySelector(".game");
 const startContainer = document.querySelector(".container");
+const username = document.querySelector("#userName");
 
 const tiles = document.querySelector("#tiles-div-easy-9");
 const tilesChildren = tiles.children;
 
 function startTimer60() {
   timerUpdate = setInterval(() => {
-    document.querySelector(".timer").innerHTML = `time left: ${time} secs`;
+    document.querySelector(".timer").innerHTML = `Time left: ${time} secs`;
     time--;
     if (time == -1) {
       clearInterval(timerUpdate);
@@ -33,6 +34,11 @@ function startTimer60() {
 startBtn.addEventListener("click", () => {
   startContainer.style.display = "none";
   gameScreen.style.display = "block";
+  let name = username.value;
+  if (name == "") {
+    name = "Guest";
+  }
+  document.querySelector(".name").innerHTML = `Hi, ${name} 👋🏻`;
 });
 
 tiles.addEventListener("click", (e) => {
@@ -43,7 +49,7 @@ tiles.addEventListener("click", (e) => {
         tilesChildren[i].style.backgroundColor = "transparent";
         tilesChildren[i].style.pointerEvents = "none";
         tilesChildren[i].style.border = "none";
-        document.querySelector(".clicks").innerHTML = `clicks left: ${
+        document.querySelector(".clicks").innerHTML = `Clicks left: ${
           5 - (clickedCounter + 1)
         }`;
       }
@@ -78,10 +84,11 @@ function callLogo() {
       }
     }
     showString += countryName.slice(x);
-    document.querySelector("#word-hint").innerHTML = showString;
-    document.querySelector(
-      "#continent-hint"
-    ).innerHTML = `Continent - ${res.data[randomIndex].continents[0]}`;
+    setTimeout(() => {
+      document.querySelector(
+        "#word-hint"
+      ).innerHTML = `<label style="padding: 5px;">${showString}</label><label style="padding: 5px;">Continent - ${res.data[randomIndex].continents[0]}</label>`;
+    }, 2000);
   });
 }
 
@@ -89,19 +96,28 @@ callLogo();
 
 document.querySelector(".submit").addEventListener("click", () => {
   clearInterval(timerUpdate);
-  time = 20;
+  time = 30;
   let userInputValue = document.querySelector(".user-input").value;
   if (userInputValue.toLowerCase() == countryName.toLowerCase()) {
+    //right answer code here
+    document.querySelector(
+      "#alert"
+    ).innerHTML = `YOU GOT IT RIGHT<br>${countryName}`;
+    document.querySelector("#alert").style.display = "flex";
+    setTimeout(() => {
+      document.querySelector("#alert").style.display = "none";
+    }, 2000);
+    document.querySelector("#tiles-div-easy-9").style.display = "none";
     points += 5 - clickedCounter + 5;
     streak++;
-    document.querySelector("#points").innerHTML = `Total Points = ${points}`;
-    document.querySelector("#streak").innerHTML = `Streak = ${streak}`;
+    document.querySelector(".score").innerHTML = `Score: ${points}`;
+    document.querySelector(".streak").innerHTML = `Streak: ${streak}`;
     console.log("right answer");
-    alert("RIGHT ANSWER");
+    // alert("RIGHT ANSWER");
     setTimeout(() => {
       callLogo();
       clickedCounter = 0;
-      document.querySelector(".clicks").innerHTML = `clicks left: 5`;
+      document.querySelector(".clicks").innerHTML = `Clicks left: 5`;
       document.querySelector(".user-input").value = "";
       tiles.style.pointerEvents = "auto";
       for (let i = 0; i < 9; i++) {
@@ -109,6 +125,7 @@ document.querySelector(".submit").addEventListener("click", () => {
         tilesChildren[i].style.pointerEvents = "auto";
         tilesChildren[i].style.border = "2px solid greenyellow";
       }
+      document.querySelector("#tiles-div-easy-9").style.display = "flex";
     }, 3000);
   } else {
     points = 0;
