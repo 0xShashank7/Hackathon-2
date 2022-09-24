@@ -4,6 +4,8 @@
 
 // setInterval(refresh,5000);
 
+const resultScreen = document.querySelector(".result");
+
 let clickedCounter = 0;
 let countryName = "",
   time = 30,
@@ -27,6 +29,15 @@ function startTimer60() {
     if (time == -1) {
       clearInterval(timerUpdate);
       tiles.style.pointerEvents = "none";
+      gameScreen.style.display = "none";
+      const resultScreen = document.querySelector(".result");
+      resultScreen.style.display = "flex";
+      let scoreResult = document.querySelector(".score-result");
+      let streakResult = document.querySelector(".streak-result");
+      scoreResult.innerHTML = `Score: ${points}`;
+      streakResult.innerHTML = `Streak: ${streak}`;
+      points = 0;
+      streak = 0;
     }
   }, 1000);
 }
@@ -68,14 +79,10 @@ function callLogo() {
   let url = "https://restcountries.com/v3.1/all";
   axios.get(url).then((res) => {
     startTimer60();
-    // console.log(res.data[randomIndex].continents[0]);
     countryName = res.data[randomIndex].name.common;
-    console.log(countryName);
-    console.log(res.data[randomIndex].flags.png);
     document.querySelector(".game-image").src = res.data[randomIndex].flags.png;
     let showString = "";
     let x = parseInt(countryName.length / 2);
-    console.log(x);
     for (let i = 0; i < x; i++) {
       if (countryName[i] == " ") {
         showString += "&nbsp;&nbsp;&nbsp;";
@@ -121,16 +128,48 @@ document.querySelector(".submit").addEventListener("click", () => {
       document.querySelector(".user-input").value = "";
       tiles.style.pointerEvents = "auto";
       for (let i = 0; i < 9; i++) {
-        tilesChildren[i].style.backgroundColor = "#ff7e00";
+        tilesChildren[i].style.backgroundColor = "purple";
         tilesChildren[i].style.pointerEvents = "auto";
-        tilesChildren[i].style.border = "2px solid greenyellow";
+        tilesChildren[i].style.border = "2px solid #ececef";
       }
       document.querySelector("#tiles-div-easy-9").style.display = "flex";
     }, 3000);
-  } else {
+  } else if (userInputValue.toLowerCase() !== countryName.toLowerCase()) {
+    // console.log("wrong answer");
+    // alert("WRONG ANSWER");
+    gameScreen.style.display = "none";
+
+    if (streak > 5) {
+      document.querySelector(".result-img").src =
+        "https://media.kulfyapp.com/RmJKQc/RmJKQc-360.gif";
+      // superStar
+    } else if (streak > 0) {
+      document.querySelector(".result-img").src =
+        "https://c.tenor.com/Wx7Em_VR0o4AAAAC/laugh.gif";
+      // vadivelu
+    } else if (streak == 0) {
+      document.querySelector(".result-img").src =
+        "https://c.tenor.com/-e3miX1u_4YAAAAM/yento-endo-emo.gif";
+      // brahmananadam
+    }
+
+    resultScreen.style.display = "flex";
+    let scoreResult = document.querySelector(".score-result");
+    let streakResult = document.querySelector(".streak-result");
+    scoreResult.innerHTML = `Score: ${points}`;
+    streakResult.innerHTML = `Streak: ${streak}`;
+
     points = 0;
     streak = 0;
-    console.log("wrong answer");
-    alert("WRONG ANSWER");
   }
+});
+
+const playAgain = document.querySelector(".play-again");
+
+playAgain.addEventListener("click", () => {
+  // callLogo();
+  // document.querySelector(".user-input").value = "";
+  // resultScreen.style.display = "none";
+  // startContainer.style.display = "flex";
+  window.location.reload();
 });

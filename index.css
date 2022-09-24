@@ -1,36 +1,35 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Clash Display', sans-serif;
-    /* height: 100vh; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Clash Display", sans-serif;
+  /* height: 100vh; */
 }
-body{
-    margin: 60px;
-    background: #ececef;
+body {
+  margin: 60px;
+  background: #ececef;
 }
-.container{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    color: #ECECEF;
-    height: 80vh;
-    border-radius: 25px;
-    /* background: ; */
-    /* background: url('https://source.unsplash.com/random') no-repeat; */
-    background-size: cover;
-    background-position: center;
-    width: 90vw;
+  color: #ececef;
+  height: 80vh;
+  border-radius: 25px;
+  /* background: ; */
+  /* background: url('https://source.unsplash.com/random') no-repeat; */
+  background-size: cover;
+  background-position: center;
+  width: 90vw;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-    background: linear-gradient(
+  background: linear-gradient(
     174deg,
     #00ffbd,
     #c500ff,
@@ -44,72 +43,71 @@ body{
   -webkit-animation: AnimationName 40s ease infinite;
   -moz-animation: AnimationName 40s ease infinite;
   animation: AnimationName 40s ease infinite;
-  text-shadow: 2px 2px 20px black; 
-
+  text-shadow: 2px 2px 20px black;
 }
 
 @-webkit-keyframes AnimationName {
-    0% {
-      background-position: 51% 0%;
-    }
-    50% {
-      background-position: 50% 100%;
-    }
-    100% {
-      background-position: 51% 0%;
-    }
+  0% {
+    background-position: 51% 0%;
   }
-  @-moz-keyframes AnimationName {
-    0% {
-      background-position: 51% 0%;
-    }
-    50% {
-      background-position: 50% 100%;
-    }
-    100% {
-      background-position: 51% 0%;
-    }
+  50% {
+    background-position: 50% 100%;
   }
-  @keyframes AnimationName {
-    0% {
-      background-position: 51% 0%;
-    }
-    50% {
-      background-position: 50% 100%;
-    }
-    100% {
-      background-position: 51% 0%;
-    } 
+  100% {
+    background-position: 51% 0%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
 }
 
-#title h1{
-    font-size: 50px;
-    text-shadow: 5px 5px 5px #141618;
+#title h1 {
+  font-size: 50px;
+  text-shadow: 5px 5px 5px #141618;
 }
-.start-btn{
-    padding: 10px 30px;
-    border-radius: 10px;
-    border: none;
-    background-color: #ececef;
-    transition: 0.4s;
-    color: #141618;
-    font-weight: 700;
+.start-btn {
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ececef;
+  transition: 0.4s;
+  color: #141618;
+  font-weight: 700;
 }
-.start-btn:hover{
-    cursor: pointer;
-    background-color: #141618;
-    color: #ecebef;
-    font-weight: 800;
+.start-btn:hover {
+  cursor: pointer;
+  background-color: #141618;
+  color: #ecebef;
+  font-weight: 800;
 }
-.form{
-    text-shadow: 5px 5px 5px #141618;
-    margin: 25px;
+.form {
+  text-shadow: 5px 5px 5px #141618;
+  margin: 25px;
 }
-.form input{
-    text-align: center;
-    padding: 4px 17px;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-    margin-top: 10px;
+.form input {
+  text-align: center;
+  padding: 4px 17px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  margin-top: 10px;
 }

@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pictionary</title>
+    <title>Vexillophile</title>
     <link rel="stylesheet" href="./index.css" />
     <link
       href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="./HackerBois.png" />
     <link rel="stylesheet" href="./game.css" />
   </head>
   <body>
@@ -17,15 +18,13 @@
       <div id="title">
         <h1>Vexillophile - A tale of flags</h1>
       </div>
-      <div style="text-align: center;" class="form">
+      <div style="text-align: center" class="form">
         <h3>Enter your name</h3>
         <input type="text" id="userName" />
       </div>
       <button class="start-btn" onclick="">Enter game</button>
     </div>
 
-
-    
     <div class="game">
       <div class="container">
         <div class="header">
@@ -36,12 +35,11 @@
           <p class="timer">Time left: 30 secs</p>
         </div>
         <main>
-
           <div class="image-box">
             <img
-            src="https://c4.wallpaperflare.com/wallpaper/988/230/567/lockheed-martin-f-22-raptor-military-lockheed-martin-f-22-raptor-wallpaper-preview.jpg"
-            alt="game-image"
-            class="game-image"
+              src="https://c4.wallpaperflare.com/wallpaper/988/230/567/lockheed-martin-f-22-raptor-military-lockheed-martin-f-22-raptor-wallpaper-preview.jpg"
+              alt="game-image"
+              class="game-image"
             />
 
             <div id="tiles-div-easy-9">
@@ -57,17 +55,15 @@
             </div>
           </div>
 
-          <div id="alert">
-
-          </div>
+          <div id="alert"></div>
 
           <div class="input-field">
-            <p class="name guess" style="font-size: 1.5rem;"></p>
+            <p class="name guess" style="font-size: 1.5rem"></p>
             <p class="guess">Guess the flag</p>
             <input class="user-input" type="text" />
             <button class="submit">submit</button>
             <label for="" id="word-hint" class="country">
-             <div class="loader"></div>
+              <div class="loader"></div>
             </label>
           </div>
         </main>
@@ -75,7 +71,15 @@
     </div>
 
     <div class="result">
-
+      <p class="wrong-message">Sorry, you got it wrong!🥹</p>
+      <p class="score-result"></p>
+      <p class="streak-result"></p>
+      <img
+        src="https://c.tenor.com/-e3miX1u_4YAAAAM/yento-endo-emo.gif"
+        alt=""
+        class="result-img"
+      />
+      <button class="play-again">Play again</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js"></script>
     <script src="./index.js"></script>
