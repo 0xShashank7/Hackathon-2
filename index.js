@@ -80,6 +80,7 @@ function callLogo() {
   axios.get(url).then((res) => {
     startTimer60();
     countryName = res.data[randomIndex].name.common;
+    // console.log(countryName);
     document.querySelector(".game-image").src = res.data[randomIndex].flags.png;
     let showString = "";
     let x = parseInt(countryName.length / 2);
